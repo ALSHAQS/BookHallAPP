@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:3001";
 
 // =======================================================
 // 1️⃣ Fetch All Rooms (User + Admin)
@@ -10,7 +9,7 @@ export const fetchRooms = createAsyncThunk(
   "rooms/fetchRooms",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`${API_URL}/rooms`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/rooms`);
       return res.data;
     } catch (err) {
       return rejectWithValue("Failed to load rooms");
@@ -25,7 +24,7 @@ export const addRoom = createAsyncThunk(
   "rooms/addRoom",
   async (roomData, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${API_URL}/rooms`, roomData);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/rooms`, roomData);
       return res.data.room;
     } catch (err) {
       return rejectWithValue("Failed to add room");
