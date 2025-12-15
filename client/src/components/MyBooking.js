@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserBookings, cancelBooking } from "../Features/BookingSlice";
 import { useNavigate } from "react-router-dom";
 import "./css/MyBooking.css";
-import Location from './Location';
+import React, { useEffect, useState } from "react";
 
 const MyBooking = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [location, setLocation] = useState(null);
+  const [locationError, setLocationError] = useState("");
 
   const user = useSelector((state) => state.users.user);
   const bookings = useSelector((state) => state.bookings.items);
@@ -24,6 +26,24 @@ const MyBooking = () => {
       dispatch(cancelBooking(id));
     }
   };
+  useEffect(() => {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLocation({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+      },
+      (error) => {
+        setLocationError("Location access denied");
+      }
+    );
+  } else {
+    setLocationError("Geolocation not supported");
+  }
+}, []);
+
 
   const handleViewDetails = (booking) => {
     navigate("/UpdateBooking", { state: { booking } });
@@ -31,8 +51,18 @@ const MyBooking = () => {
 
   return (
     <div className="my-bookings-page">
-   
-    
+    <div className="location-box">
+    <h4>Your Location</h4>
+  {location && (
+    <p>
+      Latitude: {location.latitude.toFixed(4)} <br />
+      Longitude: {location.longitude.toFixed(4)}
+    </p>
+  )}
+
+  {locationError && <p className="location-error">{locationError}</p>}
+</div>
+
       <h2 className="page-title">My Bookings</h2>
   
 
@@ -41,9 +71,7 @@ const MyBooking = () => {
       {bookings.length === 0 && (
         <p className="empty-text">No bookings found</p>
       )}
-    <div>
-      <Location />
-    </div>
+    
 
       <div className="booking-list">
         {bookings.map((booking) => (
