@@ -36,7 +36,7 @@ const RoomCard = ({ room, bookingCriteria }) => {
         </p>
 
         <button className="room-btn" onClick={handleViewDetails}>
-          View Details
+          Booking NOW
         </button>
       </div>
     </div>
