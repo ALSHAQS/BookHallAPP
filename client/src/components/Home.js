@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import bg from "../Images/bg.png";
 import "./css/Home.css"; // ملف الستايل الخاص بالهوم
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -52,10 +53,10 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.8 }}
         >
-          <a href="/login" className="btn-main home-btn">
+          <Link to="/login" className="btn-main home-btn">
             Log In
           </a>
-          <a href="/Signup" className="btn-gold home-btn">
+          <Link to="/Signup" className="btn-gold home-btn">
             Sign Up
           </a>
         </motion.div>
