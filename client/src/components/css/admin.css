@@ -1,0 +1,172 @@
+.admin-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f7efe5;
+  color: #2b1b0e;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.admin-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #5a3a1b;
+}
+
+.refresh-btn {
+  border: 1px solid #d9b48f;
+  background: #fff;
+  color: #5a3a1b;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.refresh-btn:hover {
+  background: #faf3eb;
+}
+
+.loading-text {
+  margin: 10px 0 18px;
+  color: #6f431d;
+}
+
+.table-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  padding: 14px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.admin-table thead th {
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  color: #5a3a1b;
+  background: #faf3eb;
+  padding: 14px 12px;
+  border-bottom: 1px solid #ead7c2;
+  white-space: nowrap;
+}
+
+.admin-table tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #f0e3d6;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.admin-table tbody tr:hover {
+  background: #fff8f0;
+}
+
+.actions-col {
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.btn.approve {
+  background: #1f8a3b;
+  color: #fff;
+}
+
+.btn.approve:hover {
+  filter: brightness(0.92);
+}
+
+.btn.reject {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btn.reject:hover {
+  filter: brightness(0.92);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  border-color: #f1d18a;
+  color: #8a5b00;
+}
+
+.status-badge.approved {
+  background: #e7f7ec;
+  border-color: #a7e1b5;
+  color: #1f8a3b;
+}
+
+.status-badge.rejected {
+  background: #fdecea;
+  border-color: #f5b6ae;
+  color: #c0392b;
+}
+
+.status-badge.cancelled {
+  background: #f2f2f2;
+  border-color: #d6d6d6;
+  color: #666;
+}
+
+.muted {
+  color: #999;
+}
+
+.center {
+  text-align: center;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+.empty-cell {
+  text-align: center;
+  padding: 22px 12px;
+  color: #6f431d;
+}

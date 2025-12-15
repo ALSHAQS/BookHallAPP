@@ -1,0 +1,99 @@
+/* خلفية الصفحة */
+.register-page {
+  min-height: 100vh;
+  background-image: 
+    linear-gradient(120deg, rgba(90, 62, 43, 0.7), rgba(193, 154, 107, 0.55)),
+    url("../../Images/bg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* بطاقة التسجيل */
+.register-card {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  padding: 45px 40px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* اللوجو */
+.register-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+/* العنوان */
+.register-title {
+  font-size: 2.2rem;
+  color: #5a3e2b;
+  font-weight: 800;
+}
+
+/* تحت العنوان */
+.register-subtitle {
+  font-size: 1rem;
+  color: #3d2b1f;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* الحقول */
+.register-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d2b48c;
+  background-color: #fff9f3;
+  border-radius: 12px;
+  outline: none;
+}
+
+.register-input:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.25);
+}
+
+/* زر التسجيل */
+.btn-register {
+  width: 100%;
+  padding: 12px;
+  background-color: #d4af37 !important;
+  color: #3d2b1f !important;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  background-color: #b59429 !important;
+  transform: translateY(-3px);
+}
+
+/* رسالة السيرفر */
+.server-message {
+  margin-top: 15px;
+  color: #5a3e2b;
+  font-weight: 600;
+}
+
+/* رابط تسجيل الدخول */
+.register-bottom-text {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #3d2b1f;
+}
+
+.register-bottom-text span {
+  color: #8b5e3c;
+  cursor: pointer;
+  font-weight: 700;
+}

@@ -1,0 +1,59 @@
+.home-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  background-color: var(--cream);
+}
+
+/* خلفية الهيرو */
+.home-hero {
+  height: 92vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* العنوان */
+.home-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fffdf8;
+}
+
+/* سطر تحت العنوان */
+.home-sub {
+  font-size: 2rem;
+  margin-top: 10px;
+  color: #f7f2eb;
+}
+
+/* وصف نصي */
+.home-desc {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  padding: 15px 25px;
+  border-radius: 18px;
+  display: inline-block;
+  color: #3d2b1f;
+}
+
+/* مجموعة الأزرار */
+.home-btns {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* زرار */
+.home-btn {
+  min-width: 150px;
+  text-align: center;
+  font-size: 1.1rem;
+}

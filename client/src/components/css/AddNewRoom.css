@@ -1,0 +1,81 @@
+.add-room-page {
+  min-height: 100vh;
+  background: #faf6f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* رساله النجاح */
+.success-msg {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* ===== CARD ===== */
+.add-room-card {
+  background: #fffaf3;
+  width: 420px;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* ===== TITLE ===== */
+.add-room-title {
+  text-align: center;
+  color: #5a3e2b;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* ===== FORM ROW ===== */
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.form-row label {
+  width: 110px;
+  font-weight: 600;
+  color: #6b4c3a;
+}
+
+.form-row input,
+.form-row textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d8b48c;
+  font-size: 14px;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #c79a3b;
+}
+
+/* ===== BUTTON ===== */
+.submit-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: #c79a3b;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #b3872f;
+}

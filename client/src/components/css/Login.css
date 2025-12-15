@@ -1,0 +1,101 @@
+/* =========================
+   LOGIN PAGE - LUXURY STYLE
+========================= */
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(60, 40, 20, 0.6),
+      rgba(60, 40, 20, 0.6)
+    ),
+    url("../../Images/bg.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 380px;
+  background: rgba(255, 248, 240, 0.95);
+  border-radius: 18px;
+  padding: 35px 30px 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.login-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #4b2e19;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.login-card input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #d8c2a8;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+  border-color: #b08d57;
+  box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.25);
+}
+
+/* =========================
+   LOGIN BUTTON (BOTTOM)
+========================= */
+
+.login-card button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #b08d57, #8a6236);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.login-card button:hover {
+  background: linear-gradient(135deg, #8a6236, #b08d57);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-msg {
+  background: rgba(255, 90, 90, 0.15);
+  color: #b30000;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+}
