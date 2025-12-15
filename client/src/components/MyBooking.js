@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserBookings, cancelBooking } from "../Features/BookingSlice";
 import { useNavigate } from "react-router-dom";
 import "./css/MyBooking.css";
+import Location from './Location';
 
 const MyBooking = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,12 @@ const MyBooking = () => {
 
   return (
     <div className="my-bookings-page">
+    <div>
+      <Location />
+    </div>
+    
       <h2 className="page-title">My Bookings</h2>
+  
 
       {status === "loading" && <p className="loading-text">Loading...</p>}
 
