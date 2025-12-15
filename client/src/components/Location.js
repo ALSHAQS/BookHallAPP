@@ -4,7 +4,6 @@ import axios from "axios";
 
 
 const User = () => {
-  const { user} = useSelector((state) => state.users);
   const [ip, setIp] = useState(null); //State to hold the IP address
   const [country, setCountry] = useState(null); //State to hold geolocation
   const [region, setRegion] = useState(null); // State to hold geolocation
