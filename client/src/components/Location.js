@@ -27,7 +27,7 @@ function Location() {
   }, []);
 
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div>
       <h4>User Location</h4>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
