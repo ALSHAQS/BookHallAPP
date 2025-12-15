@@ -26,9 +26,9 @@ async function getGeoLocationData()  {
 
   return (
     <div>
-       <h6>IP Address: {ip}</h6>
-       <h6>Country: {country}</h6>
-       <h6>Region: {region}</h6>
+       <h3>IP Address: {ip}</h3>
+       <h3>Country: {country}</h3>
+       <h3>Region: {region}</h3>
     </div>
   );
 };
