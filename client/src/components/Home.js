@@ -55,10 +55,10 @@ const Home = () => {
         >
           <Link to="/login" className="btn-main home-btn">
             Log In
-          </a>
+          </Link>
           <Link to="/signup" className="btn-gold home-btn">
             Sign Up
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>
