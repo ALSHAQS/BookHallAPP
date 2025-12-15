@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = "http://localhost:3001";
 
 /* =======================
    REGISTER USER
@@ -10,7 +9,7 @@ export const registerUser = createAsyncThunk(
   "users/registerUser",
   async (data, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${API}/registerUser`, data);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/registerUser`, data);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.msg || "Register failed");
@@ -25,7 +24,7 @@ export const login = createAsyncThunk(
   "users/login",
   async (data, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${API}/login`, data);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/login`, data);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.msg || "Login failed");
@@ -58,7 +57,6 @@ const userSlice = createSlice({
 
       /* REGISTER */
       .addCase(registerUser.fulfilled, (state, action) => {
-        // ✅ لا تسجيل دخول
         state.msg = action.payload.msg;
       })
       .addCase(registerUser.rejected, (state, action) => {
