@@ -98,3 +98,20 @@
   text-align: center;
   color: #777;
 }
+.location-box {
+  background: #fff5ee;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #c19a6b;
+  color: #5a3e2b;
+}
+
+.location-box h4 {
+  margin-bottom: 8px;
+}
+
+.location-error {
+  color: #a0522d;
+}
+
