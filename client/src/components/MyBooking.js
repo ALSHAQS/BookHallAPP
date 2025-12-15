@@ -31,9 +31,7 @@ const MyBooking = () => {
 
   return (
     <div className="my-bookings-page">
-    <div>
-      <Location />
-    </div>
+   
     
       <h2 className="page-title">My Bookings</h2>
   
@@ -43,6 +41,9 @@ const MyBooking = () => {
       {bookings.length === 0 && (
         <p className="empty-text">No bookings found</p>
       )}
+    <div>
+      <Location />
+    </div>
 
       <div className="booking-list">
         {bookings.map((booking) => (
