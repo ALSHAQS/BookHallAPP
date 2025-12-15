@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:3001";
 
 /* ================================
    CREATE BOOKING (USER)
@@ -10,7 +9,7 @@ export const createBooking = createAsyncThunk(
   "bookings/createBooking",
   async (bookingData, { rejectWithValue }) => {
     try {
-      const res = await axios.post(`${API_URL}/bookings`, bookingData);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/bookings`, bookingData);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "Create booking failed");
@@ -25,7 +24,7 @@ export const fetchUserBookings = createAsyncThunk(
   "bookings/fetchUserBookings",
   async (email, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`${API_URL}/bookings/user/${email}`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/bookings/user/${email}`);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "Fetch bookings failed");
@@ -38,7 +37,7 @@ export const updateBooking = createAsyncThunk(
   async ({ id, date, startTime, endTime, guests }, { rejectWithValue }) => {
     try {
       const res = await axios.patch(
-        `${API_URL}/bookings/update/${id}`,
+        `${process.env.REACT_APP_API_URL}/bookings/update/${id}`,
         { date, startTime, endTime, guests }
       );
       return res.data;
@@ -56,7 +55,7 @@ export const cancelBooking = createAsyncThunk(
   "bookings/cancelBooking",
   async (id, { rejectWithValue }) => {
     try {
-      const res = await axios.patch(`${API_URL}/bookings/status/${id}`, {
+      const res = await axios.patch(`${process.env.REACT_APP_API_URL}/bookings/status/${id}`, {
         status: "cancelled",
       });
       return res.data;
@@ -73,7 +72,7 @@ export const getAllBookings = createAsyncThunk(
   "bookings/getAllBookings",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`${API_URL}/bookings`);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/bookings`);
       return res.data;
     } catch (err) {
       return rejectWithValue(err.response?.data || "Admin fetch failed");
@@ -88,7 +87,7 @@ export const updateBookingStatus = createAsyncThunk(
   "bookings/updateBookingStatus",
   async ({ id, status }, { rejectWithValue }) => {
     try {
-      const res = await axios.patch(`${API_URL}/bookings/status/${id}`, {
+      const res = await axios.patch(`${process.env.REACT_APP_API_URL}/bookings/status/${id}`, {
         status,
       });
       return res.data;
