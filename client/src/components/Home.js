@@ -52,7 +52,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1.8 }}
         >
-          <a href="/Login" className="btn-main home-btn">
+          <a href="/login" className="btn-main home-btn">
             Log In
           </a>
           <a href="/Signup" className="btn-gold home-btn">
