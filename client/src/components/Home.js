@@ -56,7 +56,7 @@ const Home = () => {
           <Link to="/login" className="btn-main home-btn">
             Log In
           </a>
-          <Link to="/Signup" className="btn-gold home-btn">
+          <Link to="/signup" className="btn-gold home-btn">
             Sign Up
           </a>
         </motion.div>
