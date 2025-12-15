@@ -25,23 +25,6 @@ const MyBooking = () => {
       dispatch(cancelBooking(id));
     }
   };
-  useEffect(() => {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLocation({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
-      },
-      (error) => {
-        setLocationError("Location access denied");
-      }
-    );
-  } else {
-    setLocationError("Geolocation not supported");
-  }
-}, []);
 
 
   const handleViewDetails = (booking) => {
