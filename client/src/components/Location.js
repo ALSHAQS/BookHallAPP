@@ -1,46 +1,37 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
-function Location() {
-  const [ip, setIp] = useState("");
-  const [country, setCountry] = useState("");
-  const [region, setRegion] = useState("");
-  const [error, setError] = useState("");
 
-  const getGeoLocation = async () => {
-    try {
-      const response = await axios.get(
-        process.env.REACT_APP_LOCATION_API_URL
-      );
+const User = () => {
+  const { user} = useSelector((state) => state.users);
+  const [ip, setIp] = useState(null); //State to hold the IP address
+  const [country, setCountry] = useState(null); //State to hold geolocation
+  const [region, setRegion] = useState(null); // State to hold geolocation
 
-      setIp(response.data.ip);
-      setCountry(response.data.country_name);
-      setRegion(response.data.region);
-    } catch (err) {
-      setError("Unable to retrieve location data");
-      console.error(err);
-    }
-  };
+async function getGeoLocationData()  {
+  try {
+   
+    const response = await axios.get(process.env.REACT_APP_LOCATION_API_KEY)
+    setIp(response.data.ip);//set ip address
+    setCountry(response.data.location.country); // Set country
+    setRegion(response.data.location.region); // Set region
+  } catch (error) {
+    console.error("Error fetching geolocation data:", error.message);
+  }
+};
 
   useEffect(() => {
-    getGeoLocation();
-  }, []);
+    getGeoLocationData()
+  },[])
 
   return (
     <div>
-      <h4>User Location</h4>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {!error && (
-        <>
-          <h6>IP Address: {ip}</h6>
-          <h6>Country: {country}</h6>
-          <h6>Region: {region}</h6>
-        </>
-      )}
+       <h6>IP Address: {ip}</h6>
+       <h6>Country: {country}</h6>
+       <h6>Region: {region}</h6>
     </div>
   );
-}
+};
 
-export default Location;
+export default User;
