@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserBookings, cancelBooking } from "../Features/BookingSlice";
 import { useNavigate } from "react-router-dom";
 import "./css/MyBooking.css";
+import Location from "./Location";
 
 const MyBooking = () => {
   const dispatch = useDispatch();
@@ -35,14 +36,8 @@ const MyBooking = () => {
     <div className="my-bookings-page">
     <div className="location-box">
     <h4>Your Location</h4>
-  {location && (
-    <p>
-      Latitude: {location.latitude.toFixed(4)} <br />
-      Longitude: {location.longitude.toFixed(4)}
-    </p>
-  )}
-
-  {locationError && <p className="location-error">{locationError}</p>}
+    <Location/>
+  
 </div>
 
       <h2 className="page-title">My Bookings</h2>
