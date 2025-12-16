@@ -2,9 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-// =======================================================
-// 1️⃣ Fetch All Rooms (User + Admin)
-// =======================================================
+ // Fetch All Rooms (User + Admin)
 export const fetchRooms = createAsyncThunk(
   "rooms/fetchRooms",
   async (_, { rejectWithValue }) => {
@@ -17,9 +15,7 @@ export const fetchRooms = createAsyncThunk(
   }
 );
 
-// =======================================================
-// 2️⃣ Add New Room (Admin)
-// =======================================================
+//  Add New Room (Admin)
 export const addRoom = createAsyncThunk(
   "rooms/addRoom",
   async (roomData, { rejectWithValue }) => {
@@ -32,9 +28,7 @@ export const addRoom = createAsyncThunk(
   }
 );
 
-// =======================================================
 // Initial State
-// =======================================================
 const initialState = {
   rooms: [],
   status: "idle",
@@ -42,9 +36,7 @@ const initialState = {
 };
 
 
-// =======================================================
 // Room Slice
-// =======================================================
 const roomSlice = createSlice({
   name: "rooms",
   initialState,
@@ -52,9 +44,7 @@ const roomSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      // =======================
       // Fetch Rooms
-      // =======================
       .addCase(fetchRooms.pending, (state) => {
         state.status = "loading";
       })
@@ -67,9 +57,7 @@ const roomSlice = createSlice({
         state.error = action.payload;
       })
 
-      // =======================
       // Add Room
-      // =======================
       .addCase(addRoom.pending, (state) => {
         state.status = "loading";
       })
@@ -84,9 +72,6 @@ const roomSlice = createSlice({
   },
 });
 
-// =======================================================
-// Selectors
-// =======================================================
+//  Selectors
 export const selectAllRooms = (state) => state.rooms.items;
-
 export default roomSlice.reducer;
