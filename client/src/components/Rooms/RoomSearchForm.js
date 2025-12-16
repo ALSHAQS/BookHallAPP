@@ -9,10 +9,9 @@ const RoomSearchForm = ({ handleSearchResults }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // المعايير اللي نرسلها
+    
     const criteria = { capacity, price, date };
 
-    // داتا وهمية للنتائج (الخدمة الحقيقية بالباك اند)
     handleSearchResults([], criteria);
   };
 
