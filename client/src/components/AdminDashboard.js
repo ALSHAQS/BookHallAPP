@@ -3,8 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./css/AdminDashboard.css";
 
-const API = "http://localhost:3001";
-
 const AdminDashboard = () => {
   const navigate = useNavigate();
 
@@ -15,8 +13,8 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const roomsRes = await axios.get(`${API}/rooms`);
-        const bookingsRes = await axios.get(`${API}/bookings`);
+        const roomsRes = await axios.get(`${process.env.REACT_APP_API_URL}/rooms`);
+        const bookingsRes = await axios.get(`${process.env.REACT_APP_API_URL}/bookings`);
 
         setRooms(Array.isArray(roomsRes.data) ? roomsRes.data : []);
         setBookings(Array.isArray(bookingsRes.data) ? bookingsRes.data : []);
