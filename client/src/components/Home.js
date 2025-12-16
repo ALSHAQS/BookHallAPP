@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import bg from "../Images/bg.png";
-import "./css/Home.css"; // ملف الستايل الخاص بالهوم
+import "./css/Home.css"; 
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="home-wrapper">
 
-      {/* خلفية مع تغبيش وتدرج */}
+     
       <div
         className="home-hero"
         style={{
@@ -18,7 +18,7 @@ const Home = () => {
           ), url(${bg})`,
         }}
       >
-        {/* المحتوى النصي */}
+       
         <motion.h1
           className="home-title"
           initial={{ opacity: 0, y: -30 }}
@@ -46,7 +46,7 @@ const Home = () => {
           Discover and reserve the ideal venue for weddings, events, meetings and more.
         </motion.p>
 
-        {/* الأزرار */}
+        
         <motion.div
           className="home-btns"
           initial={{ opacity: 0 }}
