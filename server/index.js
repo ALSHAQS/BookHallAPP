@@ -16,7 +16,7 @@ app.use(cors());
 // =======================
 // MongoDB Connection
 // =======================
-const connectString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@postitcluster.qghdnct.mongodb.net/${process.env.MONGO_DATABASE}?appName=PostITCluster`;
+const connectString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@postitcluster.qghdnct.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
 
 mongoose
   .connect(connectString)
