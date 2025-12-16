@@ -2,9 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-/* =======================
-   REGISTER USER
-======================= */
+/*  REGISTER USER */
 export const registerUser = createAsyncThunk(
   "users/registerUser",
   async (data, { rejectWithValue }) => {
@@ -17,9 +15,7 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-/* =======================
-   LOGIN USER
-======================= */
+/* LOGIN USER */
 export const login = createAsyncThunk(
   "users/login",
   async (data, { rejectWithValue }) => {
@@ -32,16 +28,12 @@ export const login = createAsyncThunk(
   }
 );
 
-/* =======================
-   LOGOUT
-======================= */
+/* LOGOUT */
 export const logout = createAsyncThunk("users/logout", async () => {
   localStorage.removeItem("user");
 });
 
-/* =======================
-   INITIAL STATE
-======================= */
+/* INITIAL STATE */
 const savedUser = JSON.parse(localStorage.getItem("user"));
 
 const userSlice = createSlice({
