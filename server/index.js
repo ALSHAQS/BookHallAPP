@@ -13,27 +13,21 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// =======================
 // MongoDB Connection
-// =======================
 const connectString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@postitcluster.qghdnct.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
 mongoose
   .connect(connectString)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Mongo Error:", err));
 
-// =======================
 // SERVER PORT
-// =======================
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () =>
   console.log(`Server running on port ${PORT}`)
 );
 
 
-// =======================================================
 // REGISTER USER
-// =======================================================
 app.post("/registerUser", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -65,9 +59,7 @@ app.post("/registerUser", async (req, res) => {
   }
 });
 
-// =======================================================
 // LOGIN USER / ADMIN
-// =======================================================
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -96,9 +88,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// =======================================================
 // GET ROOMS
-// =======================================================
 app.get("/rooms", async (req, res) => {
   try {
     const rooms = await RoomModel.find();
@@ -108,9 +98,7 @@ app.get("/rooms", async (req, res) => {
   }
 });
 
-// =======================================================
 // ADD ROOM (ADMIN)
-// =======================================================
 app.post("/rooms", async (req, res) => {
   try {
     const room = await RoomModel.create(req.body);
@@ -120,9 +108,7 @@ app.post("/rooms", async (req, res) => {
   }
 });
 
-// =======================================================
-// ✅ CREATE BOOKING (FIXED – VERY IMPORTANT)
-// =======================================================
+//  CREATE BOOKING (FIXED – VERY IMPORTANT)
 app.post("/bookings", async (req, res) => {
   try {
     const {
@@ -141,7 +127,7 @@ app.post("/bookings", async (req, res) => {
       userEmail,
       roomId,
       roomName,
-      date: new Date(date),   // 🔴 مهم
+      date: new Date(date),   
       startTime,
       endTime,
       hours,
@@ -149,16 +135,14 @@ app.post("/bookings", async (req, res) => {
       status: status || "pending",
     });
 
-    res.status(201).json(booking); // 🔥 رجّع الكائن مباشرة
+    res.status(201).json(booking); 
   } catch (error) {
     console.error("CREATE BOOKING ERROR:", error);
     res.status(500).json({ msg: "Failed to create booking" });
   }
 });
 
-// =======================================================
 // GET ALL BOOKINGS (ADMIN)
-// =======================================================
 app.get("/bookings", async (req, res) => {
   try {
     const bookings = await Booking.find().sort({ createdAt: -1 });
@@ -168,9 +152,7 @@ app.get("/bookings", async (req, res) => {
   }
 });
 
-// =======================================================
 // UPDATE BOOKING STATUS (ADMIN)
-// =======================================================
 app.patch("/bookings/status/:id", async (req, res) => {
   try {
     const { status } = req.body;
@@ -191,9 +173,7 @@ app.patch("/bookings/status/:id", async (req, res) => {
   }
 });
 
-// =======================================================
 // GET USER BOOKINGS
-// =======================================================
 app.get("/bookings/user/:email", async (req, res) => {
   try {
     const bookings = await Booking.find({
@@ -204,9 +184,7 @@ app.get("/bookings/user/:email", async (req, res) => {
     res.status(500).json({ msg: "Failed to fetch user bookings" });
   }
 });
-// =======================
 // UPDATE BOOKING DETAILS (USER)
-// =======================
 app.patch("/bookings/update/:id", async (req, res) => {
   try {
     const { date, startTime, endTime, guests } = req.body;
