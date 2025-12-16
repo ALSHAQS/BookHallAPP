@@ -8,8 +8,8 @@ const RoomCard = ({ room, bookingCriteria }) => {
   const handleViewDetails = () => {
     navigate(`/BookingDetails/${room._id}`, {
       state: {
-        room,               // ✅ هذا المهم
-        bookingCriteria,    // (اختياري)
+        room,              
+        bookingCriteria,    
       },
     });
   };
