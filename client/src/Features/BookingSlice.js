@@ -2,9 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-/* ================================
-   CREATE BOOKING (USER)
-================================ */
+/* CREATE BOOKING (USER) */
 export const createBooking = createAsyncThunk(
   "bookings/createBooking",
   async (bookingData, { rejectWithValue }) => {
@@ -17,9 +15,7 @@ export const createBooking = createAsyncThunk(
   }
 );
 
-/* ================================
-   FETCH USER BOOKINGS (EMAIL)
-================================ */
+/* FETCH USER BOOKINGS (EMAIL) */
 export const fetchUserBookings = createAsyncThunk(
   "bookings/fetchUserBookings",
   async (email, { rejectWithValue }) => {
@@ -48,9 +44,7 @@ export const updateBooking = createAsyncThunk(
 );
 
 
-/* ================================
-   CANCEL BOOKING
-================================ */
+/*  CANCEL BOOKING */
 export const cancelBooking = createAsyncThunk(
   "bookings/cancelBooking",
   async (id, { rejectWithValue }) => {
@@ -65,9 +59,7 @@ export const cancelBooking = createAsyncThunk(
   }
 );
 
-/* ================================
-   ADMIN – FETCH ALL BOOKINGS
-================================ */
+/* ADMIN – FETCH ALL BOOKINGS */
 export const getAllBookings = createAsyncThunk(
   "bookings/getAllBookings",
   async (_, { rejectWithValue }) => {
@@ -80,9 +72,7 @@ export const getAllBookings = createAsyncThunk(
   }
 );
 
-/* ================================
-   ADMIN – APPROVE / REJECT
-================================ */
+/* ADMIN – APPROVE / REJECT */
 export const updateBookingStatus = createAsyncThunk(
   "bookings/updateBookingStatus",
   async ({ id, status }, { rejectWithValue }) => {
@@ -97,9 +87,7 @@ export const updateBookingStatus = createAsyncThunk(
   }
 );
 
-/* ================================
-   SLICE
-================================ */
+/* SLICE */
 const bookingSlice = createSlice({
   name: "bookings",
   initialState: {
