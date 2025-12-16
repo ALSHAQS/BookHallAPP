@@ -1,4 +1,4 @@
-/* خلفية الصفحة */
+/* Background */
 .register-page {
   min-height: 100vh;
   background-image: 
@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-/* بطاقة التسجيل */
+/* Register Card */
 .register-card {
   width: 420px;
   background: rgba(255, 255, 255, 0.25);
@@ -22,20 +22,20 @@
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* اللوجو */
+/* Logo */
 .register-logo {
   width: 140px;
   margin-bottom: 15px;
 }
 
-/* العنوان */
+/* Title */
 .register-title {
   font-size: 2.2rem;
   color: #5a3e2b;
   font-weight: 800;
 }
 
-/* تحت العنوان */
+/* Subtitle */
 .register-subtitle {
   font-size: 1rem;
   color: #3d2b1f;
@@ -43,7 +43,7 @@
   margin-bottom: 25px;
 }
 
-/* الحقول */
+/* Inputs */
 .register-input {
   width: 100%;
   padding: 12px;
@@ -59,7 +59,7 @@
   box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.25);
 }
 
-/* زر التسجيل */
+/* Register button */
 .btn-register {
   width: 100%;
   padding: 12px;
@@ -78,14 +78,14 @@
   transform: translateY(-3px);
 }
 
-/* رسالة السيرفر */
+/* Server Message */
 .server-message {
   margin-top: 15px;
   color: #5a3e2b;
   font-weight: 600;
 }
 
-/* رابط تسجيل الدخول */
+/* Link register button */
 .register-bottom-text {
   margin-top: 20px;
   font-size: 0.95rem;
