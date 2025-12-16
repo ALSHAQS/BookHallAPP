@@ -12,31 +12,27 @@ const BookingDetails = () => {
   const user = useSelector((state) => state.users.user);
   const room = location.state?.room;
 
-  // ======================
+  
   // HOOKS (ALWAYS FIRST)
-  // ======================
+  
   const [fullName, setFullName] = useState("");
   const [date, setDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
 
-  // ======================
   // GUARD
-  // ======================
   if (!room) {
     return <p className="error-text">Hall details not available.</p>;
   }
 
-  // ======================
   // CALCULATE HOURS (LIVE + INTEGER)
-  // ======================
   const calculateHours = () => {
     if (!startTime || !endTime) return 0;
 
     const start = new Date(`1970-01-01T${startTime}`);
     const end = new Date(`1970-01-01T${endTime}`);
 
-    // ❌ نهاية قبل البداية
+    //  End before start 
     if (end <= start) return 0;
 
     const diff = (end - start) / (1000 * 60 * 60);
@@ -48,9 +44,7 @@ const BookingDetails = () => {
   const discount = hours >= 3 ? basePrice * 0.1 : 0;
   const finalPrice = basePrice - discount;
 
-  // ======================
   // SUBMIT
-  // ======================
   const handleConfirmBooking = async (e) => {
     e.preventDefault();
 
