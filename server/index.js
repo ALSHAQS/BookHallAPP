@@ -18,18 +18,14 @@ app.use(cors());
 // =======================
 const connectString = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@postitcluster.qghdnct.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
 
-mongoose
-  .connect(connectString)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("Mongo Error:", err));
+mongoose.connect(connectString)
 
 // =======================
 // SERVER PORT
 // =======================
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () =>
-  console.log(`Server running on port ${PORT}`)
-);
+app.listen(process.env.PORT, () => {
+  console.log("You are connected");
+});
 
 // =======================================================
 // REGISTER USER
