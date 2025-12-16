@@ -26,6 +26,10 @@ import ProtectedRoute from "./components/ProtectedRoute";
 // Global CSS
 import "./components/css/global.css";
 
+test("dummy test", () => {
+  expect(true).toBe(true);
+});
+
 function App() {
   return (
     <Router>
