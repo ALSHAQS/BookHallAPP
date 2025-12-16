@@ -52,6 +52,5 @@ const bookingSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// 🔴 هذا السطر هو الحل
 const Booking = mongoose.model("Booking", bookingSchema);
 export default Booking;
