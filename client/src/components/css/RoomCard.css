@@ -14,9 +14,7 @@
   box-shadow: 0 22px 45px rgba(0, 0, 0, 0.28);
 }
 
-/* ======================
-   IMAGE
-====================== */
+/* IMAGE */
 
 .room-image-wrapper {
   width: 100%;
@@ -30,9 +28,7 @@
   object-fit: cover;
 }
 
-/* ======================
-   BODY
-====================== */
+/* BODY */
 
 .room-card-body {
   padding: 18px;
@@ -52,9 +48,7 @@
   color: #555;
 }
 
-/* ======================
-   BUTTON
-====================== */
+/* BUTTON */
 
 .room-btn {
   margin-top: 14px;
